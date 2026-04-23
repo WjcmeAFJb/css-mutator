@@ -1,0 +1,41 @@
+/* Navigation bar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 64px;
+  background-color: #1a1a2e;
+  color: white;
+  /* BUG 1: z-index too low — modal overlay can appear behind navbar */
+  z-index: 10;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  color: white;
+}
+
+.navLinks {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: white;
+}

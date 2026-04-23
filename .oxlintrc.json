@@ -1,0 +1,39 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicolo-ribaudo/oxc-resolver/HEAD/npm/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "pedantic": "warn",
+    "perf": "warn",
+    "restriction": "warn",
+    "style": "off"
+  },
+  "plugins": ["typescript", "import", "unicorn", "oxc"],
+  "rules": {
+    "no-unused-vars": "off",
+    "typescript/no-unused-vars": "off",
+    "no-console": "off",
+    "typescript/no-unnecessary-type-assertion": "off",
+    "unicorn/no-array-sort": "off"
+  },
+  "ignorePatterns": [
+    "dist/**",
+    "dist-test/**",
+    "node_modules/**",
+    ".vitepress/**",
+    "pnpm-lock.yaml",
+    "*.md",
+    "*.css",
+    "*.svg",
+    "*.html"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx"],
+      "rules": {
+        "typescript/no-unsafe-member-access": "off",
+        "typescript/no-unsafe-type-assertion": "off"
+      }
+    }
+  ]
+}

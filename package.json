@@ -1,0 +1,26 @@
+{
+  "name": "css-mutator-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "typecheck": "tsgo -b",
+    "lint": "oxlint --type-aware -D correctness -D suspicious -D pedantic -D perf -D restriction -A style",
+    "fmt": "oxfmt --write .",
+    "fmt:check": "oxfmt --check .",
+    "dev:demo": "pnpm --filter demo-app dev",
+    "dev:docs": "pnpm --filter docs-site dev",
+    "test:mutate": "pnpm --filter demo-app test:mutate"
+  },
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0.8",
+    "@typescript/native-preview": "7.0.0-dev.20260404.1",
+    "oxfmt": "^0.43.0",
+    "oxlint": "^1.58.0",
+    "oxlint-tsgolint": "^0.19.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.15.4"
+}

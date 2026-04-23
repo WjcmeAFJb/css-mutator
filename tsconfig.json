@@ -1,0 +1,7 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/css-mutator" },
+    { "path": "packages/css-mutator/tsconfig.test.json" }
+  ]
+}

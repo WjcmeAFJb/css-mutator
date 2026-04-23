@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <rect width="128" height="128" rx="24" fill="#667eea"/>
+  <text x="64" y="78" text-anchor="middle" font-family="monospace" font-size="48" font-weight="bold" fill="white">CSS</text>
+  <text x="64" y="105" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="600" fill="rgba(255,255,255,0.8)">mutator</text>
+  <!-- DNA helix accent -->
+  <circle cx="20" cy="20" r="4" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="28" cy="28" r="3" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="108" cy="20" r="4" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="100" cy="28" r="3" fill="rgba(255,255,255,0.3)"/>
+</svg>

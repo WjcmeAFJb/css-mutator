@@ -1,0 +1,90 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to release (e.g. v0.1.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build package
+        working-directory: packages/css-mutator
+        run: |
+          rm -f tsconfig.tsbuildinfo
+          pnpm exec tsc
+
+      - name: Pack tarball
+        id: pack
+        run: |
+          mkdir -p dist-artifacts
+          cd packages/css-mutator
+          pnpm pack --pack-destination "$GITHUB_WORKSPACE/dist-artifacts"
+          cd "$GITHUB_WORKSPACE"
+          TARBALL=$(ls dist-artifacts/*.tgz | head -n1)
+          BASENAME=$(basename "$TARBALL")
+          echo "tarball=$TARBALL" >> "$GITHUB_OUTPUT"
+          echo "basename=$BASENAME" >> "$GITHUB_OUTPUT"
+          echo "Packed: $TARBALL"
+          ls -la dist-artifacts/
+
+      - name: Resolve tag
+        id: tag
+        run: |
+          if [ -n "${{ github.event.inputs.tag }}" ]; then
+            echo "name=${{ github.event.inputs.tag }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "name=${GITHUB_REF#refs/tags/}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.name }}
+          name: ${{ steps.tag.outputs.name }}
+          generate_release_notes: true
+          files: ${{ steps.pack.outputs.tarball }}
+          body: |
+            ## Installation
+
+            This package is distributed as a tarball attached to this release —
+            install it directly by URL, no npm registry needed.
+
+            **pnpm:**
+            ```sh
+            pnpm add https://github.com/${{ github.repository }}/releases/download/${{ steps.tag.outputs.name }}/${{ steps.pack.outputs.basename }}
+            ```
+
+            **npm:**
+            ```sh
+            npm install https://github.com/${{ github.repository }}/releases/download/${{ steps.tag.outputs.name }}/${{ steps.pack.outputs.basename }}
+            ```
+
+            **yarn:**
+            ```sh
+            yarn add https://github.com/${{ github.repository }}/releases/download/${{ steps.tag.outputs.name }}/${{ steps.pack.outputs.basename }}
+            ```

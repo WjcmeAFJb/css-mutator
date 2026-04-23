@@ -1,0 +1,15 @@
+node_modules/
+dist/
+dist-test/
+dist-artifacts/
+.vite/
+.vitepress/dist/
+.vitepress/cache/
+*.tsbuildinfo
+coverage/
+reports/
+.stryker-tmp/
+*.log
+*.tgz
+.DS_Store
+packages/demo-app/test/visual/__screenshots__/

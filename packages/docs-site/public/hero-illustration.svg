@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="#1a1a2e"/>
+
+  <!-- Code editor mockup -->
+  <rect x="30" y="30" width="340" height="240" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Title bar -->
+  <rect x="30" y="30" width="340" height="32" rx="8" fill="#21262d"/>
+  <rect x="30" y="54" width="340" height="8" fill="#21262d"/>
+  <circle cx="50" cy="46" r="5" fill="#f85149"/>
+  <circle cx="68" cy="46" r="5" fill="#d29922"/>
+  <circle cx="86" cy="46" r="5" fill="#3fb950"/>
+  <text x="200" y="50" text-anchor="middle" font-family="monospace" font-size="11" fill="#8b949e">button.module.css</text>
+
+  <!-- CSS code lines -->
+  <text x="45" y="85" font-family="monospace" font-size="11" fill="#8b949e">1</text>
+  <text x="65" y="85" font-family="monospace" font-size="11" fill="#ff7b72">.button</text>
+  <text x="115" y="85" font-family="monospace" font-size="11" fill="#e6edf3"> {</text>
+
+  <text x="45" y="105" font-family="monospace" font-size="11" fill="#8b949e">2</text>
+  <text x="75" y="105" font-family="monospace" font-size="11" fill="#79c0ff">color</text>
+  <text x="107" y="105" font-family="monospace" font-size="11" fill="#e6edf3">: </text>
+  <text x="118" y="105" font-family="monospace" font-size="11" fill="#a5d6ff">red</text>
+  <text x="140" y="105" font-family="monospace" font-size="11" fill="#e6edf3">;</text>
+
+  <text x="45" y="125" font-family="monospace" font-size="11" fill="#8b949e">3</text>
+  <text x="75" y="125" font-family="monospace" font-size="11" fill="#79c0ff">display</text>
+  <text x="125" y="125" font-family="monospace" font-size="11" fill="#e6edf3">: </text>
+  <text x="136" y="125" font-family="monospace" font-size="11" fill="#a5d6ff">flex</text>
+  <text x="163" y="125" font-family="monospace" font-size="11" fill="#e6edf3">;</text>
+
+  <text x="45" y="145" font-family="monospace" font-size="11" fill="#8b949e">4</text>
+  <text x="75" y="145" font-family="monospace" font-size="11" fill="#79c0ff">padding</text>
+  <text x="125" y="145" font-family="monospace" font-size="11" fill="#e6edf3">: </text>
+  <text x="136" y="145" font-family="monospace" font-size="11" fill="#a5d6ff">12px</text>
+  <text x="163" y="145" font-family="monospace" font-size="11" fill="#e6edf3">;</text>
+
+  <text x="45" y="165" font-family="monospace" font-size="11" fill="#8b949e">5</text>
+  <text x="65" y="165" font-family="monospace" font-size="11" fill="#e6edf3">}</text>
+
+  <!-- Mutation gutter markers -->
+  <rect x="30" y="94" width="8" height="16" fill="#3fb950" opacity="0.3"/>
+  <rect x="30" y="114" width="8" height="16" fill="#3fb950" opacity="0.3"/>
+  <rect x="30" y="134" width="8" height="16" fill="#f85149" opacity="0.3"/>
+
+  <!-- Mutation arrows -->
+  <g transform="translate(200, 100)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#3fb950" stroke-width="2" stroke-dasharray="4"/>
+    <text x="60" y="4" font-family="monospace" font-size="10" fill="#3fb950">blue ✓ killed</text>
+  </g>
+
+  <g transform="translate(200, 120)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#3fb950" stroke-width="2" stroke-dasharray="4"/>
+    <text x="60" y="4" font-family="monospace" font-size="10" fill="#3fb950">none ✓ killed</text>
+  </g>
+
+  <g transform="translate(200, 140)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#f85149" stroke-width="2" stroke-dasharray="4"/>
+    <text x="60" y="4" font-family="monospace" font-size="10" fill="#f85149">0px ✗ survived</text>
+  </g>
+
+  <!-- Score badge -->
+  <rect x="245" y="190" width="110" height="45" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="300" y="210" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#8b949e">mutation score</text>
+  <text x="300" y="228" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#3fb950">66.7%</text>
+</svg>
